@@ -4,7 +4,7 @@ var rover_width = 100;
 var rover_height = 90;
 
 rover_image = "rover.png";
-mars_image = "mars.jpg";
+mars_land = "mars.jpg";
 
 canvas = document.getElementById("myCanvas");
 ctx = canvas.getContext("2d");
@@ -15,7 +15,7 @@ function add() {
     //setting a function onload of the var
     backgound_imgTag.onload = uploadBackground;
     //load img
-    backgound_imgTag.src = mars_image;
+    backgound_imgTag.src = mars_land;
 
     //load image in browser before loading in canvas
     rover_imgTag = new Image();
@@ -26,7 +26,7 @@ function add() {
 }
 
 function uploadBackground() {
-    ctx.drawImage(background_imgTag, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(backgound_imgTag, 0, 0, canvas.width, canvas.height);
 }
 
 function uploadrover() {
