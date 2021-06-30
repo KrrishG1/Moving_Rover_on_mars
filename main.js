@@ -4,10 +4,13 @@ var rover_width = 100;
 var rover_height = 90;
 
 rover_image = "rover.png";
-mars_land = "mars.jpg";
 
 canvas = document.getElementById("myCanvas");
 ctx = canvas.getContext("2d");
+
+nasa_mars_images_array =["mars1.jpg","mars2.jpg","mars3.jpg","mars4.jpg"];
+random_number = Math.floor(Math.random() * 4);
+mars_land = nasa_mars_images_array[random_number];
 
 function add() {
     //defining a var with a new img
@@ -59,4 +62,40 @@ if(keyPressed == '39'){
     right();
     console.log("right");
 }
+}
+
+function up(){
+    if(rover_y >= 0){
+        rover_y = rover_y - 10;
+        console.log("When up arrow pressed, x ="+ rover_x +" | y ="+ rover_y);
+        uploadBackground();
+        uploadrover();
+    }
+}
+
+function down(){
+    if(rover_y <= 500){
+        rover_y = rover_y + 10;
+        console.log("When up arrow pressed, x ="+ rover_x +" | y ="+ rover_y);
+        uploadBackground();
+        uploadrover();
+    }
+}
+
+function left(){
+    if(rover_x >= 0){
+        rover_x = rover_x - 10;
+        console.log("When up arrow pressed, x ="+ rover_x +" | y ="+ rover_y);
+        uploadBackground();
+        uploadrover();
+    }
+}
+
+function right(){
+    if(rover_x <= 700){
+        rover_x = rover_x + 10;
+        console.log("When up arrow pressed, x ="+ rover_x +" | y ="+ rover_y);
+        uploadBackground();
+        uploadrover();
+    }
 }
